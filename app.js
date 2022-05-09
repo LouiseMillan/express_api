@@ -17,6 +17,14 @@ app.get('/v1/explorers', (req, res) => {
     res.status(200).json(explorers);
 });
 
+app.get('/v1/explorers/:id', (req, res) => {
+    console.log(`Api Explorers GET request ${new Date()}`);
+    console.log(`Getting explorer with id ${req.params.id}`);
+
+    const explorer = {id: 1, name: "Luis"};
+    res.status(200).json(explorer);
+});
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
